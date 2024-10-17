@@ -9,7 +9,7 @@
           <div class="rounded-3xl overflow-clip border border-slate-800 bg-[#131d35]">
             <div class="h-52 overflow-hidden border-b border-slate-800">
               <img
-                class="object-cover h-full"
+                class="object-cover object-top w-full h-full"
                 src="/phluid.webp"
                 alt="Phluid Worldwide Application" />
             </div>
@@ -56,7 +56,10 @@
           <h1 class="text-blue-500 font-bold pb-2">HG-DB</h1>
           <div class="rounded-3xl overflow-clip border border-slate-800 bg-[#131d35]">
             <div class="h-52 overflow-hidden border-b border-slate-800">
-              <img class="object-cover h-full" src="/hgdb.webp" alt="HG-DB Database" />
+              <img
+                class="object-cover object-top w-full h-full"
+                src="/hgdb.webp"
+                alt="HG-DB Database" />
             </div>
             <div class="px-8 py-5">
               <div class="pb-1">
@@ -86,7 +89,10 @@
           <h1 class="text-blue-500 font-bold pb-2">CGPSDO Training</h1>
           <div class="rounded-3xl overflow-clip border border-slate-800 bg-[#131d35]">
             <div class="h-52 overflow-hidden border-b border-slate-800">
-              <img class="object-cover h-full" src="/cgpsdo.webp" alt="CGPSDO Training website" />
+              <img
+                class="object-cover object-top w-full h-full"
+                src="/cgpsdo.webp"
+                alt="CGPSDO Training website" />
             </div>
             <div class="px-8 py-5">
               <div class="pb-1">A Learning Management System used by the Singapore Government</div>
@@ -117,7 +123,10 @@
           <h1 class="text-blue-500 font-bold pb-2">Keys</h1>
           <div class="rounded-3xl overflow-clip border border-slate-800 bg-[#131d35]">
             <div class="h-52 overflow-hidden border-b border-slate-800">
-              <img class="object-cover h-full" src="/keys.webp" alt="Keys website" />
+              <img
+                class="object-cover object-top w-full h-full"
+                src="/keys.webp"
+                alt="Keys website" />
             </div>
             <div class="px-8 py-5">
               <div class="pb-1">A system to streamline the management of physical keys.</div>
@@ -144,7 +153,10 @@
           <h1 class="text-blue-500 font-bold pb-2">Emotions.ml</h1>
           <div class="rounded-3xl overflow-clip border border-slate-800 bg-[#131d35]">
             <div class="h-52 overflow-hidden border-b border-slate-800">
-              <img class="object-cover h-full" src="/emotions.webp" alt="Emotions.ml Website" />
+              <img
+                class="object-cover object-top w-full h-full"
+                src="/emotions.webp"
+                alt="Emotions.ml Website" />
             </div>
             <div class="px-8 py-5">
               <div class="pb-1">
@@ -174,7 +186,10 @@
           <h1 class="text-blue-500 font-bold pb-2">EduPass</h1>
           <div class="rounded-3xl overflow-clip border border-slate-800 bg-[#131d35]">
             <div class="h-52 overflow-hidden border-b border-slate-800">
-              <img class="object-cover h-full" src="/edupass.webp" alt="EduPass Website" />
+              <img
+                class="object-cover object-top w-full h-full"
+                src="/edupass.webp"
+                alt="EduPass Website" />
             </div>
             <div class="px-8 py-5">
               <div class="pb-1">
