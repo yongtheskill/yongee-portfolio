@@ -28,7 +28,7 @@
       <div class="pt-1">
         My expertise lies in TypeScript, Python, VueJS and C++.
         <br />
-        I’m a experienced in full-stack development, AI, game development, embedded development and
+        I’m experienced in full-stack development, AI, game development, embedded development and
         project management.
         <br />
         Althought I have my favourites, I love learning, and am always open to using the best tool
