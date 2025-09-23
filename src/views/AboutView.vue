@@ -20,13 +20,15 @@
         I believe in the power of software to change the world.
         <br />
         I’m currently working on
-        <a href="https://phluid.world/" class="underline text-orange-400">Phluid Worldwide</a>.
+        <a href="https://chips.chat/" target="_blank" class="underline text-orange-400">
+          chips.chat</a
+        >.
         <br />
         When I’m not working, I’m making music and doing photography.
       </div>
       <h1 class="text-3xl font-bold text-white pt-12">What I Can Do</h1>
       <div class="pt-1">
-        My expertise lies in TypeScript, Python, VueJS and C++.
+        My expertise lies in TypeScript, Python, ReactJS, VueJS and C++.
         <br />
         I’m experienced in full-stack development, AI, game development, embedded development and
         project management.
@@ -36,6 +38,22 @@
       </div>
       <h1 class="text-3xl font-bold text-white pt-16">What I Have Done</h1>
       <div class="pt-2">
+        <span class="text-slate-200">chips.chat</span>
+        <br />
+        Since 2025
+        <br />
+        Founded a pay-per-use LLM app. Currently leading an amazing team of 4 to bring
+        state-of-the-art AI to everyone
+      </div>
+      <div class="pt-7">
+        <span class="text-slate-200">WEDDLL</span>
+        <br />
+        2025
+        <br />
+        System design, costing models and prototyping for a IoT & blockchain based traceability
+        startup.
+      </div>
+      <div class="pt-7">
         <span class="text-slate-200">National University of Singapore</span>
         <br />
         Since 2024
@@ -45,7 +63,7 @@
       <div class="pt-7">
         <span class="text-slate-200">Phluid Worldwide</span>
         <br />
-        Since 2022
+        2022 - 2025
         <br />
         Working on the AI behind the company’s products.
         <br />

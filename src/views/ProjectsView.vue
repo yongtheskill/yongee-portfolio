@@ -3,9 +3,41 @@
     <div class="container mx-auto pt-12 md:pt-16 px-6 md:px-10 pb-12">
       <h1 class="text-3xl font-bold text-white">My Projects Include...</h1>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5 pt-6">
+        <!--chips.chat-->
+        <div>
+          <h1 class="text-gray-300 font-bold pb-2">chips.chat</h1>
+          <div class="rounded-3xl overflow-clip border border-slate-800 bg-[#131d35]">
+            <div class="h-52 overflow-hidden border-b border-slate-800">
+              <img
+                class="object-cover object-top w-full h-full"
+                src="/chipschat.webp"
+                alt="chips.chat Website" />
+            </div>
+            <div class="px-8 py-5">
+              <div class="pb-1">
+                An LLM app that reduces costs by 80% through a pay-per-use model.
+              </div>
+              <div class="inline-block">
+                <div
+                  class="text-sm px-2 py-1 inline-block bg-slate-800 w-max rounded-2xl border border-slate-700 mr-2 mt-2">
+                  <TypescriptIcon class="pr-1 mx-1 inline-block" />TypeScript
+                </div>
+                <div
+                  class="text-sm px-2 py-1 inline-block bg-slate-800 w-max rounded-2xl border border-slate-700 mr-2 mt-2">
+                  <ReactIcon class="pr-1 mx-1 inline-block" />ReactJS
+                </div>
+                <div
+                  class="text-sm px-2 py-1 inline-block bg-slate-800 w-max rounded-2xl border border-slate-700 mr-2 mt-2">
+                  <ConvexIcon class="pr-1 mx-1 inline-block" />Convex
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!--Phluid Worldwide-->
         <div>
-          <h1 class="text-blue-500 font-bold pb-2">Phluid Worldwide</h1>
+          <h1 class="text-gray-300 font-bold pb-2">Phluid Worldwide</h1>
           <div class="rounded-3xl overflow-clip border border-slate-800 bg-[#131d35]">
             <div class="h-52 overflow-hidden border-b border-slate-800">
               <img
@@ -18,10 +50,6 @@
                 A mobile app that links domestic helpers with employers through the use of AI.
               </div>
               <div class="inline-block">
-                <div
-                  class="text-sm px-2 py-1 inline-block bg-slate-800 w-max rounded-2xl border border-slate-700 mr-2 mt-2">
-                  <FlutterIcon class="pr-1 inline-block" />Flutter
-                </div>
                 <div
                   class="text-sm px-2 py-1 inline-block bg-slate-800 w-max rounded-2xl border border-slate-700 mr-2 mt-2">
                   <TypescriptIcon class="pr-1 mx-1 inline-block" />TypeScript
@@ -53,7 +81,7 @@
 
         <!--HG-DB-->
         <div>
-          <h1 class="text-blue-500 font-bold pb-2">HG-DB</h1>
+          <h1 class="text-gray-300 font-bold pb-2">HG-DB</h1>
           <div class="rounded-3xl overflow-clip border border-slate-800 bg-[#131d35]">
             <div class="h-52 overflow-hidden border-b border-slate-800">
               <img
@@ -86,7 +114,7 @@
 
         <!--CGPSDO Training-->
         <div>
-          <h1 class="text-blue-500 font-bold pb-2">CGPSDO Training</h1>
+          <h1 class="text-gray-300 font-bold pb-2">CGPSDO Training</h1>
           <div class="rounded-3xl overflow-clip border border-slate-800 bg-[#131d35]">
             <div class="h-52 overflow-hidden border-b border-slate-800">
               <img
@@ -120,7 +148,7 @@
 
         <!--Key Management System-->
         <div>
-          <h1 class="text-blue-500 font-bold pb-2">Keys</h1>
+          <h1 class="text-gray-300 font-bold pb-2">Keys</h1>
           <div class="rounded-3xl overflow-clip border border-slate-800 bg-[#131d35]">
             <div class="h-52 overflow-hidden border-b border-slate-800">
               <img
@@ -150,7 +178,7 @@
 
         <!--Emotions.ml-->
         <div>
-          <h1 class="text-blue-500 font-bold pb-2">Emotions.ml</h1>
+          <h1 class="text-gray-300 font-bold pb-2">Emotions.ml</h1>
           <div class="rounded-3xl overflow-clip border border-slate-800 bg-[#131d35]">
             <div class="h-52 overflow-hidden border-b border-slate-800">
               <img
@@ -183,7 +211,7 @@
 
         <!--Edupass-->
         <div>
-          <h1 class="text-blue-500 font-bold pb-2">EduPass</h1>
+          <h1 class="text-gray-300 font-bold pb-2">EduPass</h1>
           <div class="rounded-3xl overflow-clip border border-slate-800 bg-[#131d35]">
             <div class="h-52 overflow-hidden border-b border-slate-800">
               <img
@@ -231,4 +259,5 @@ import ReactIcon from '../icons/ReactIcon.vue';
 import RustIcon from '../icons/RustIcon.vue';
 import TypescriptIcon from '../icons/TypescriptIcon.vue';
 import VuejsIcon from '../icons/VuejsIcon.vue';
+import ConvexIcon from '../icons/ConvexIcon.vue';
 </script>
