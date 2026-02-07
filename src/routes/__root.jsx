@@ -107,6 +107,7 @@ function App() {
           <div className='flex items-center px-6 border-r border-slate-800'>find me at:</div>
           <a
             href='https://www.linkedin.com/in/yongee/'
+            aria-label='LinkedIn'
             target='_blank'
             rel='noopener noreferrer'
             className='flex items-center px-4 border-r border-slate-800 text-slate-500 hover:text-slate-300 hover:bg-slate-800 transition-colors'>
@@ -114,6 +115,7 @@ function App() {
           </a>
           <a
             href='https://github.com/yongtheskill'
+            aria-label='GitHub'
             target='_blank'
             rel='noopener noreferrer'
             className='flex items-center px-4 border-r border-slate-800 text-slate-500 hover:text-slate-300 hover:bg-slate-800 transition-colors'>

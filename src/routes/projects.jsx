@@ -18,9 +18,9 @@ function Projects() {
         <h1 className='text-3xl font-bold text-white'>My Projects Include...</h1>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5 pt-6'>
           {/* chips.chat */}
-          <div>
+          <div className='flex flex-col'>
             <h1 className='text-gray-300 font-bold pb-2'>chips.chat</h1>
-            <div className='rounded-3xl overflow-clip border border-slate-800 bg-[#131d35]'>
+            <div className='flex-1 rounded-3xl overflow-clip border border-slate-800 bg-[#131d35]'>
               <div className='h-52 overflow-hidden border-b border-slate-800'>
                 <img
                   className='object-cover object-top w-full h-full'
@@ -51,9 +51,9 @@ function Projects() {
           </div>
 
           {/* Phluid Worldwide */}
-          <div>
+          <div className='flex flex-col'>
             <h1 className='text-gray-300 font-bold pb-2'>Phluid Worldwide</h1>
-            <div className='rounded-3xl overflow-clip border border-slate-800 bg-[#131d35]'>
+            <div className='flex-1 rounded-3xl overflow-clip border border-slate-800 bg-[#131d35]'>
               <div className='h-52 overflow-hidden border-b border-slate-800'>
                 <img
                   className='object-cover object-top w-full h-full'
@@ -96,9 +96,9 @@ function Projects() {
           </div>
 
           {/* HG-DB */}
-          <div>
+          <div className='flex flex-col'>
             <h1 className='text-gray-300 font-bold pb-2'>HG-DB</h1>
-            <div className='rounded-3xl overflow-clip border border-slate-800 bg-[#131d35]'>
+            <div className='flex-1 rounded-3xl overflow-clip border border-slate-800 bg-[#131d35]'>
               <div className='h-52 overflow-hidden border-b border-slate-800'>
                 <img
                   className='object-cover object-top w-full h-full'
@@ -130,9 +130,9 @@ function Projects() {
           </div>
 
           {/* CGPSDO Training */}
-          <div>
+          <div className='flex flex-col'>
             <h1 className='text-gray-300 font-bold pb-2'>CGPSDO Training</h1>
-            <div className='rounded-3xl overflow-clip border border-slate-800 bg-[#131d35]'>
+            <div className='flex-1 rounded-3xl overflow-clip border border-slate-800 bg-[#131d35]'>
               <div className='h-52 overflow-hidden border-b border-slate-800'>
                 <img
                   className='object-cover object-top w-full h-full'
@@ -167,9 +167,9 @@ function Projects() {
           </div>
 
           {/* Key Management System */}
-          <div>
+          <div className='flex flex-col'>
             <h1 className='text-gray-300 font-bold pb-2'>Keys</h1>
-            <div className='rounded-3xl overflow-clip border border-slate-800 bg-[#131d35]'>
+            <div className='flex-1 rounded-3xl overflow-clip border border-slate-800 bg-[#131d35]'>
               <div className='h-52 overflow-hidden border-b border-slate-800'>
                 <img
                   className='object-cover object-top w-full h-full'
@@ -198,9 +198,9 @@ function Projects() {
           </div>
 
           {/* Emotions.ml */}
-          <div>
+          <div className='flex flex-col'>
             <h1 className='text-gray-300 font-bold pb-2'>Emotions.ml</h1>
-            <div className='rounded-3xl overflow-clip border border-slate-800 bg-[#131d35]'>
+            <div className='flex-1 rounded-3xl overflow-clip border border-slate-800 bg-[#131d35]'>
               <div className='h-52 overflow-hidden border-b border-slate-800'>
                 <img
                   className='object-cover object-top w-full h-full'
@@ -232,9 +232,9 @@ function Projects() {
           </div>
 
           {/* EduPass */}
-          <div>
+          <div className='flex flex-col'>
             <h1 className='text-gray-300 font-bold pb-2'>EduPass</h1>
-            <div className='rounded-3xl overflow-clip border border-slate-800 bg-[#131d35]'>
+            <div className='flex-1 rounded-3xl overflow-clip border border-slate-800 bg-[#131d35]'>
               <div className='h-52 overflow-hidden border-b border-slate-800'>
                 <img
                   className='object-cover object-top w-full h-full'
