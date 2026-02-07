@@ -1,118 +1,228 @@
 <script setup>
 import { RouterLink, RouterView, useRoute } from 'vue-router';
-import { Linkedin, Github, Bars } from '@vicons/fa';
+import { Linkedin, Github, Bars, Times } from '@vicons/fa';
 import { Icon } from '@vicons/utils';
-import { ref } from 'vue';
-const location = useRoute();
+import { ref, computed, watch } from 'vue';
+import { useTheme } from './composables/useTheme';
+import ParticleGalaxy from './components/ParticleGalaxy.vue';
+import WireframeHero from './components/WireframeHero.vue';
+
+const route = useRoute();
+const { theme, toggleTheme } = useTheme();
 
 const menuOpen = ref(false);
 
 const links = [
-  { label: 'hello!', to: '/' },
-  { label: 'about-me', to: '/about' },
-  { label: 'projects', to: '/projects' },
+  { label: 'Home', to: '/' },
+  { label: 'About', to: '/about' },
+  { label: 'Projects', to: '/projects' },
+  { label: 'Contact', to: '/contact' },
 ];
 
-const mobileLinks = [
-  { label: 'hello!', to: '/' },
-  { label: 'about-me', to: '/about' },
-  { label: 'projects', to: '/projects' },
-  { label: 'contact-me', to: '/contact' },
-];
+// Close mobile menu on route change
+watch(() => route.path, () => {
+  menuOpen.value = false;
+});
+
+const themeLabel = computed(() => theme.value === 'cosmos' ? '◈ Cosmos' : '⟁ Cyber');
 </script>
 
 <template>
-  <div class="h-dvh w-dvw p-4 lg:px-9 lg:py-8">
-    <div
-      class="bg-slate-900 w-full h-full rounded-2xl border-slate-800 border text-slate-400 flex flex-col justify-between">
-      <header class="w-full">
-        <nav
-          class="h-[3.5rem] md:h-12 border-slate-800 border-b flex items-stretch justify-between">
-          <div class="flex">
+  <div class="min-h-dvh relative" :style="{ background: 'var(--bg-primary)' }">
+    <!-- Three.js Background -->
+    <ParticleGalaxy v-if="theme === 'cosmos'" />
+    <WireframeHero v-else />
+
+    <!-- Scanline overlay for cyber theme -->
+    <div v-if="theme === 'cyber'" class="scanline-overlay" />
+
+    <!-- Navigation -->
+    <header
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+      :style="{ background: 'var(--nav-bg)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)' }"
+    >
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 md:h-18">
+          <!-- Logo -->
+          <RouterLink
+            to="/"
+            class="font-display text-lg sm:text-xl font-bold tracking-wider"
+            :style="{ color: 'var(--text-primary)' }"
+          >
+            <span :style="{ color: 'var(--accent-1)' }">Y</span>ong
+            <span :style="{ color: 'var(--accent-1)' }">E</span>e
+          </RouterLink>
+
+          <!-- Desktop Nav -->
+          <div class="hidden md:flex items-center gap-1">
             <RouterLink
-              to="/"
-              class="pl-8 text-lg md:text-base lg:pr-36 lg:border-slate-800 lg:border-r flex items-center rounded-tl-2xl hover:bg-slate-800 hover:text-slate-200 transition-colors">
-              Yong Ee
+              v-for="link in links"
+              :key="link.to"
+              :to="link.to"
+              class="nav-link px-4 py-2 text-sm font-body tracking-wide"
+              :class="{ active: route.path === link.to }"
+            >
+              {{ link.label }}
             </RouterLink>
-            <div class="flex-1 items-stretch hidden lg:flex">
-              <RouterLink
-                v-for="link in links"
-                :to="link.to"
-                class="px-8 border-slate-800 border-r flex items-center hover:bg-slate-800 hover:text-slate-200 transition-colors"
-                :class="
-                  location.path === link.to ? 'border-b-2 border-b-orange-600 text-slate-200' : ''
-                ">
-                {{ link.label }}
-              </RouterLink>
-            </div>
-          </div>
-          <div class="hidden lg:flex">
-            <RouterLink
-              to="/contact"
-              class="px-8 border-slate-800 border-l flex items-center hover:bg-slate-800 hover:text-slate-200 transition-colors"
-              :class="
-                location.path === '/contact' ? 'border-b-2 border-b-orange-600 text-slate-200' : ''
-              ">
-              contact-me
-            </RouterLink>
-          </div>
-          <div class="block border-l border-slate-800 lg:hidden">
+
+            <!-- Theme Toggle -->
             <button
-              class="px-5 flex items-center h-full text-slate-400"
-              @click="menuOpen = !menuOpen">
-              <Icon size="23">
-                <Bars />
+              @click="toggleTheme"
+              class="ml-4 px-3 py-1.5 text-xs font-body rounded-full border transition-all duration-300 hover:scale-105"
+              :style="{
+                borderColor: 'var(--border-color)',
+                color: 'var(--accent-1)',
+                background: 'var(--bg-card)',
+              }"
+            >
+              {{ themeLabel }}
+            </button>
+          </div>
+
+          <!-- Mobile Hamburger -->
+          <div class="flex items-center gap-3 md:hidden">
+            <button
+              @click="toggleTheme"
+              class="px-2 py-1 text-xs font-body rounded-full border"
+              :style="{
+                borderColor: 'var(--border-color)',
+                color: 'var(--accent-1)',
+                background: 'var(--bg-card)',
+              }"
+            >
+              {{ theme === 'cosmos' ? '◈' : '⟁' }}
+            </button>
+            <button
+              @click="menuOpen = !menuOpen"
+              class="p-2"
+              :style="{ color: 'var(--text-primary)' }"
+            >
+              <Icon size="22">
+                <Times v-if="menuOpen" />
+                <Bars v-else />
               </Icon>
             </button>
           </div>
-        </nav>
-      </header>
-
-      <div class="relative flex-1 overflow-hidden">
-        <div class="overflow-y-auto max-h-full h-full min-h-full">
-          <RouterView />
         </div>
-        <div
-          class="absolute top-0 left-0 w-full h-full bg-slate-900 transition-all"
-          :class="{
-            'scale-y-0 translate-y-[-50%]': !menuOpen,
-            'scale-y-100 translate-y-0': menuOpen,
-          }">
-          <h1 class="text-xl text-white font-semibold px-10 py-5 border-b border-slate-800">
-            Menu
-          </h1>
+      </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <Transition name="mobile-menu">
+      <div
+        v-if="menuOpen"
+        class="fixed inset-0 z-40 md:hidden flex flex-col pt-16"
+        :style="{ background: 'var(--bg-primary)', opacity: 0.98 }"
+      >
+        <nav class="flex flex-col items-center justify-center flex-1 gap-2">
           <RouterLink
-            v-for="link in mobileLinks"
+            v-for="(link, index) in links"
+            :key="link.to"
             :to="link.to"
             @click="menuOpen = false"
-            class="px-10 py-3 border-slate-800 border-b flex items-center hover:bg-slate-800 hover:text-slate-200 transition-colors"
-            :class="
-              location.path === link.to ? 'border-l-2 border-l-orange-600 text-slate-200' : ''
-            ">
+            class="text-2xl font-display font-semibold py-3 px-8 transition-all duration-300 w-full text-center"
+            :style="{
+              color: route.path === link.to ? 'var(--accent-1)' : 'var(--text-secondary)',
+              animationDelay: `${index * 0.05}s`,
+            }"
+          >
             {{ link.label }}
           </RouterLink>
+        </nav>
+
+        <!-- Mobile Social Links -->
+        <div class="flex items-center justify-center gap-6 pb-10">
+          <a
+            href="https://www.linkedin.com/in/yongee/"
+            target="_blank"
+            class="transition-colors duration-300"
+            :style="{ color: 'var(--text-muted)' }"
+          >
+            <Icon size="24"><Linkedin /></Icon>
+          </a>
+          <a
+            href="https://github.com/yongtheskill"
+            target="_blank"
+            class="transition-colors duration-300"
+            :style="{ color: 'var(--text-muted)' }"
+          >
+            <Icon size="24"><Github /></Icon>
+          </a>
         </div>
       </div>
+    </Transition>
 
-      <footer class="w-full h-12 border-slate-800 border-t flex items-stretch">
-        <div class="flex items-center px-6 border-r border-slate-800">find me at:</div>
-        <a
-          href="https://www.linkedin.com/in/yongee/"
-          target="_blank"
-          class="flex items-center px-4 border-r border-slate-800 text-slate-500 hover:text-slate-300 hover:bg-slate-800 transition-colors">
-          <Icon size="23">
-            <Linkedin />
-          </Icon>
-        </a>
-        <a
-          href="https://github.com/yongtheskill"
-          target="_blank"
-          class="flex items-center px-4 border-r border-slate-800 text-slate-500 hover:text-slate-300 hover:bg-slate-800 transition-colors">
-          <Icon size="23">
-            <Github />
-          </Icon>
-        </a>
-      </footer>
-    </div>
+    <!-- Main Content -->
+    <main class="relative z-10 pt-16 md:pt-18">
+      <RouterView v-slot="{ Component, route: viewRoute }">
+        <Transition name="page" mode="out-in">
+          <component :is="Component" :key="viewRoute.path" />
+        </Transition>
+      </RouterView>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="relative z-10 border-t py-8 px-4 sm:px-6 lg:px-8"
+      :style="{ borderColor: 'var(--border-color)' }"
+    >
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm font-body" :style="{ color: 'var(--text-muted)' }">
+          © 2026 Yong Ee · Built with Vue & Three.js
+        </p>
+        <div class="flex items-center gap-5">
+          <a
+            href="https://www.linkedin.com/in/yongee/"
+            target="_blank"
+            class="transition-all duration-300 hover:scale-110"
+            :style="{ color: 'var(--text-muted)' }"
+            @mouseenter="$event.target.style.color = 'var(--accent-1)'"
+            @mouseleave="$event.target.style.color = 'var(--text-muted)'"
+          >
+            <Icon size="20"><Linkedin /></Icon>
+          </a>
+          <a
+            href="https://github.com/yongtheskill"
+            target="_blank"
+            class="transition-all duration-300 hover:scale-110"
+            :style="{ color: 'var(--text-muted)' }"
+            @mouseenter="$event.target.style.color = 'var(--accent-1)'"
+            @mouseleave="$event.target.style.color = 'var(--text-muted)'"
+          >
+            <Icon size="20"><Github /></Icon>
+          </a>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
+
+<style scoped>
+/* Page transition */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-12px);
+}
+
+/* Mobile menu transition */
+.mobile-menu-enter-active,
+.mobile-menu-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mobile-menu-enter-from,
+.mobile-menu-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+</style>
